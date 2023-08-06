@@ -1,0 +1,14 @@
+{
+  "name": "comfy_sloth_store",
+  "version": "1.0.0",
+  "description": "Comfy_store created with the mother of techs, redux, tailwindcss, and jest",
+  "main": "docs/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./docs/css/style.css --watch"
+  },
+  "author": "ragab",
+  "license": "ISC"
+}

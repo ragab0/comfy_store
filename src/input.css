@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@400;700&display=swap');
+
+:root {
+    /* INDIGO */
+    /* dark shades of primary color*/
+    --clr-primary-1: #312e81;
+    --clr-primary-2: #3730a3;
+    --clr-primary-3: #4338ca;
+    --clr-primary-4: #4f46e5;
+    /* primary/main color */
+    --clr-primary-5: #6366f1;
+    /* lighter shades of primary color */
+    --clr-primary-6: #818cf8;
+    --clr-primary-7: #93c5fd;
+    --clr-primary-8: #bfdbfe;
+    --clr-primary-9: #dbeafe;
+    --clr-primary-10: #eff6ff;
+    /* SLATE */
+    /* darkest grey - used for headings */
+    --clr-grey-1: #0f172a;
+    --clr-grey-2: #1e293b;
+    --clr-grey-3: #334155;
+    --clr-grey-4: #475569;
+    /* grey used for paragraphs */
+    --clr-grey-5: #64748b;
+    --clr-grey-6: #94a3b8;
+    --clr-grey-7: #cbd5e1;
+    --clr-grey-8: #e2e8f0;
+    --clr-grey-9: #f1f5f9;
+    --clr-grey-10: #f8fafc;
+
+    --spacing: 0.1rem;
+}
+
+
+::selection {
+  @apply text-mainColor bg-black;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: 50ms ease-out;
+}
+
+
+*::-webkit-scrollbar {
+  width: 7px;
+  background-color: var(--background-start);
+}
+*::-webkit-scrollbar-thumb {
+  @apply rounded-2xl bg-gray-300 hover:bg-gray-400/70 active:bg-gray-400 
+         dark:bg-green-900/80 dark:hover:bg-green-900 dark:active:bg-green-800;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Khand', sans-serif;
+  background: var(--clr-white);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5 {
+  font-family: 'Array', sans-serif;
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+}
+
+body button {
+  font-family: inherit;
+}
+
+.container {
+  @apply max-w-7xl mx-auto
+}
