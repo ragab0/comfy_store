@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./docs/*.html",
-    "./docs/js/*.js"
+    "./docs/*.[html, css, js]",
+    "./src/*.[html, css, js]",
   ],
   theme: {
     extend: {
@@ -20,3 +20,5 @@ module.exports = {
   },
   plugins: [],
 }
+
+// npm i prettier-plugin-tailwindcss -D (Saves as dependency)
