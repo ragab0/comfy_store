@@ -1,0 +1,40 @@
+.toast {
+    animation: toastComing 100ms ease-out, toastGoing 400ms ease-out 4300ms  forwards;
+}
+
+.toast::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    height: 6px;
+    background-color: transparent;
+    animation: toastPorgress 5s linear;
+}
+
+@keyframes toastComing {
+    0% {
+        transform: translateY(25px);
+    } 100% {
+        transform: translateY(-25px);
+        display: none !important;
+    }
+}
+
+@keyframes toastGoing {
+    75% {
+        left: 50px;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+@keyframes toastPorgress {
+    0% {
+        width: 0%;
+    } 100% {
+        width: 100%;
+    }
+}
