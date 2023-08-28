@@ -1,0 +1,19 @@
+.right-filter > *:not(:last-child) {
+    @apply mb-4;
+}
+
+.right-filter .items-catgs button {
+    @apply p-0 pb-[.25rem] mb-[.50rem] border-b-[.1rem] inline-block border-current hover:opacity-80 capitalize;
+}
+
+.right-filter h5 {
+    margin-bottom: .5rem;
+}
+
+.right-filter .items-clrs li:first-child button {
+    @apply block hover:opacity-80 !capitalize me-1;
+}
+
+.right-filter .items-clrs li:not(:first-child) button {
+    @apply block p-2 rounded-full bg-red-400 hover:opacity-80;
+}
