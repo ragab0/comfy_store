@@ -1,45 +1,72 @@
-const { join } = require("path");
+const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Components = require("./src/components/index");
 
 
 module.exports = {
+  // 01 Mode option;
+  // 02 Entry;
+  // 03 Output;
+  // 04 Configuring module and our rules;
+  // 05 Setup our plugins;
 
-  // 01 Specifying the Mode option;
   mode: "development",
-
-
-  // 02 Entry to let him know from where to start
-  entry: {
-    bundler_1: join(__dirname, "src/index.js")
-  },
-
-
-  // 03 Output prop;
+  entry: resolve(__dirname, "src/index.js"),
   output: {
-    path: join(__dirname, "build"),
-    filename: "[name].[contenthash].js",
-    clean: true
+    path: resolve(__dirname, "docs"),
+    filename: "assets/js/[name].[contenthash].js",
+    // clean: true
   },
-
-
-  // 04 Configuring module and our rules that we'll use;
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      }, {},
+        test: /\.css$/,
+        use: [
+          // 'style-loader', // 2. Inject our CSS into the DOM;
+          MiniCssExtractPlugin.loader, // 2. Extract CSS into css files Instead of combining with the dom;
+          'css-loader', // 1. Take our css and trun it 
+        ]
+      },
+      {
+        test: /\.js$/,
+        use: [
+          'babel-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "assets/imgs/[name].[hashcontent].[ext]",
+            }
+          }
+        ]
+      }
     ]
   },
-
-
-  // 05 Setup the plugins that we'll use them;
   plugins: [
-    new HtmlWebpackPlugin({
-      title: "Webpack App (from plugin config)",
-      filename: "template.html",
-      template: "src/template.html"
-    })
-  ],
+    // new HtmlWebpackPlugin({
+    //   title: 'Comphy Store - Welcome!',
+    //   filename: 'index.html',
+    //   template: './src/index.html',
+    //   templateParameters: {
+    //     files: {...Components},
+    //   },
 
+    // }),
+    // new HtmlWebpackPlugin({
+    //   title: 'About Page',
+    //   filename: 'about/index.html',
+    //   template: './src/pages/about/index.html',
+    //   templateParameters: {
+    //     files: {...Components},
+    //   },
+    // }),
+    new MiniCssExtractPlugin({
+      filename: "assets/css/[name].[contenthash].css"
+    })
+  ]
 }

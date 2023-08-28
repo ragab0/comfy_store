@@ -1,11 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./docs/*.[html, css, js]",
-    "./src/*.[html, css, js]",
+    "./docs/**/*.html",
   ],
   theme: {
     extend: {
+      colors: {
+        clrOrangeLight: "var(--clr-orange-light)",
+        clrOrange: "var(--clr-orange)",
+        clrOrangeDark: "var(--clr-orange-dark)",
+        clrBrown: "var(--clr-brown)",
+        clrGrey: "var(--clr-grey)",
+
+        clrHead1: "var(--clr-dark)",
+        clrHead2: "var(--clr-dark-light)",
+        clrPar1: "var(--clr-slate)",
+        clrPar2: "var(--clr-slate-light)",
+
+        clrRed: "var(--clr-red)",
+        clrRedLight: "var(--clr-red-light)",
+        clrGreen: "var(--clr-green)",
+        clrGreenLight: "var(--clr-green-light)",
+      },
       keyframes: {
         'open-menu': {
           '0%': {transform: 'scaleY(0)'},
@@ -20,5 +36,3 @@ module.exports = {
   },
   plugins: [],
 }
-
-// npm i prettier-plugin-tailwindcss -D (Saves as dependency)

@@ -4,13 +4,17 @@
   "description": "A starter environment with a small starter JokeGenerator app",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "tailwind": "npx tailwindcss -i ./src/assets/css/globals.css -o ./docs/globals-snack.css --watch",
+    "build": "webpack --watch",
+    "server": "cd docs;http-server",
     "dev": "webpack serve"
   },
   "author": "ragab",
   "license": "ISC",
   "devDependencies": {
-    "@squoosh/lib": "^0.5.3",
+    "@babel/core": "^7.22.11",
+    "@babel/preset-env": "^7.22.10",
+    "babel-loader": "^9.1.3",
     "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.1",
     "file-loader": "^6.2.0",
@@ -28,9 +32,13 @@
     "sass-loader": "^13.3.2",
     "sharp": "^0.32.4",
     "style-loader": "^3.3.3",
-    "svgo": "^3.0.2"
+    "svgo": "^3.0.2",
+    "tailwindcss": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "file:../../../../../../home/ragab/nodejs/lib/node_modules/webpack-cli"
   },
   "dependencies": {
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "redux": "^4.2.1"
   }
 }
