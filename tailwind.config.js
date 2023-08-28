@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./docs/**/*.html",
-    "./asnack/**/*.html",
+    './src/**/*.js',
   ],
   theme: {
     extend: {
@@ -12,12 +11,12 @@ module.exports = {
         clrOrangeDark: "var(--clr-orange-dark)",
         clrBrown: "var(--clr-brown)",
         clrGrey: "var(--clr-grey)",
-
+        
         clrHead1: "var(--clr-dark)",
         clrHead2: "var(--clr-dark-light)",
         clrPar1: "var(--clr-slate)",
         clrPar2: "var(--clr-slate-light)",
-
+        
         clrRed: "var(--clr-red)",
         clrRedLight: "var(--clr-red-light)",
         clrGreen: "var(--clr-green)",
