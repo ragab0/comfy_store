@@ -4,9 +4,8 @@
   "description": "A starter environment with a small starter JokeGenerator app",
   "main": "index.js",
   "scripts": {
-    "tailwind": "npx tailwindcss -i ./src/assets/css/globals.css -o ./docs/globals-snack.css --watch",
+    "tailwind": "npx tailwindcss -i ./asnack/assets/css/globals.css -o ./asnack/assets/css/globals-snack.css --watch",
     "build": "webpack --watch",
-    "server": "cd docs;http-server",
     "dev": "webpack serve"
   },
   "author": "ragab",
@@ -38,6 +37,8 @@
     "webpack-cli": "file:../../../../../../home/ragab/nodejs/lib/node_modules/webpack-cli"
   },
   "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
     "axios": "^1.4.0",
     "redux": "^4.2.1"
   }

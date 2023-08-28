@@ -1,20 +1,19 @@
-const { readFileSync } = require("fs");
-const { resolve } = require("path");
+// import Header from "./Header";
+// import Hero from "./Hero";
+// import Features from "./Features";
+// import Benifts from "./Benifts";
+// import Newslater from "./Newslater";
+// import Footer from "./Footer";
 
 
-const Header = readFileSync(resolve(__dirname, "Header.html"), );
-const Hero = readFileSync(resolve(__dirname, "Hero.html"), );
-const Features = readFileSync(resolve(__dirname, "Features.html"), );
-const Benifts = readFileSync(resolve(__dirname, "Benifts.html"), );
-const Newslater = readFileSync(resolve(__dirname, "Newslater.html"), );
-const Footer = readFileSync(resolve(__dirname, "Footer.html"), );
+// const Components = {
+//   Header,
+//   Hero,
+//   Features,
+//   Benifts,
+//   Newslater,
+//   Footer,
+// }
 
 
-module.exports = {
-  Header,
-  Hero,
-  Features,
-  Benifts,
-  Newslater,
-  Footer,
-}
+// export default Components;

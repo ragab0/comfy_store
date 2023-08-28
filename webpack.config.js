@@ -1,7 +1,6 @@
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const Components = require("./src/components/index");
 
 
 module.exports = {
@@ -16,7 +15,7 @@ module.exports = {
   output: {
     path: resolve(__dirname, "docs"),
     filename: "assets/js/[name].[contenthash].js",
-    // clean: true
+    clean: true
   },
   module: {
     rules: [
@@ -26,13 +25,11 @@ module.exports = {
           // 'style-loader', // 2. Inject our CSS into the DOM;
           MiniCssExtractPlugin.loader, // 2. Extract CSS into css files Instead of combining with the dom;
           'css-loader', // 1. Take our css and trun it 
-        ]
+        ],
       },
       {
-        test: /\.js$/,
-        use: [
-          'babel-loader'
-        ]
+        test: /\.jsx$/,
+        use: 'html-loader'
       },
       {
         test: /\.(png|jpe?g|svg)$/,
@@ -48,25 +45,23 @@ module.exports = {
     ]
   },
   plugins: [
-    // new HtmlWebpackPlugin({
-    //   title: 'Comphy Store - Welcome!',
-    //   filename: 'index.html',
-    //   template: './src/index.html',
-    //   templateParameters: {
-    //     files: {...Components},
-    //   },
-
-    // }),
-    // new HtmlWebpackPlugin({
-    //   title: 'About Page',
-    //   filename: 'about/index.html',
-    //   template: './src/pages/about/index.html',
-    //   templateParameters: {
-    //     files: {...Components},
-    //   },
-    // }),
+    new HtmlWebpackPlugin({
+      template: './src/template.html',
+      title: 'Comphy Store - Welcome!',
+      filename: 'index.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/template.html',
+      title: 'About Page',
+      filename: 'about/index.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/template.html',
+      title: 'Products Page',
+      filename: 'products/index.html',
+    }),
     new MiniCssExtractPlugin({
-      filename: "assets/css/[name].[contenthash].css"
+      filename: "assets/css/[name].css"
     })
   ]
 }
