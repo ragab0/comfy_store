@@ -1,4 +1,4 @@
-.right-filter > *:not(:last-child) {
+.right-filter > div > *:not(:last-child) {
     @apply mb-4;
 }
 

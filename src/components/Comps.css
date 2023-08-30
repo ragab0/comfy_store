@@ -1,0 +1,28 @@
+/* Features section */
+.sec-features img {
+    height: 250px;
+}
+
+
+
+/* Single product section */
+.single-product > div > * {
+    margin-bottom: 1rem;
+}
+.single-product .stars span {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    padding: 10px;
+    background-color: orange;
+    display: block;
+}
+
+
+
+/* Right filter +++ Single product colors */
+.items-clrs li:first-child button {
+    @apply block hover:opacity-80 !capitalize me-1;
+}
+
+.items-clrs li:not(:first-child) button {
+    @apply block p-2 rounded-full bg-red-400 hover:opacity-80;
+}

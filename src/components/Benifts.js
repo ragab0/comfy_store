@@ -23,13 +23,13 @@ const cards = [
 
 export default function Benifts() {
   return (
-    <section className="pt-20 mb-20 bg-clrOrangeLight text-clrBrown">
+    <section className="py-20 lg:mb-20 bg-clrOrangeLight text-clrBrown">
       <div className="container">
-        <div className="flex justify-between items-center gap-8 mb-2">
-          <h3>Custom Furniture Built Only For You</h3>
+        <div className="flex justify-between max-md:flex-col items-start md:items-center gap-8 mb-20">
+          <h3 className="!text-start">Custom Furniture Built Only For You</h3>
           <p className="max-w-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum debitis consectetur reprehenderit non aliquam voluptates dolore aut vero consequuntur.</p>
         </div>
-        <div className="articles relative top-20 flex justify-between gap-8">
+        <div className="articles lg:-mb-40 grid md:grid-cols-2 lg:grid-cols-3 justify-between gap-8">
           {
             cards.map(({name, desc, img}, i) => (
               <figure key={i} className="p-8 bg-clrOrange rounded-md hover:-translate-y-4 shadow-lg">
@@ -37,7 +37,7 @@ export default function Benifts() {
                   <Image alt={name} src={img} className="w-full h-full" />
                 </div>
                 <figcaption className="text-center">
-                  <h4 className="my-5">Mission</h4>
+                  <h4 className="my-5 mx-auto">Mission</h4>
                   <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum debitis consectetur reprehenderit non aliquam voluptates dolore aut vero consequuntur.</p>
                 </figcaption>
               </figure>

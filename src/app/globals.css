@@ -50,11 +50,11 @@ body h5 {
 }
 
 body h1 {
-  @apply text-3xl lg:text-5xl;
+  @apply text-4xl md:text-5xl;
 }
 
 body h2 {
-  @apply relative w-fit mx-auto text-2xl lg:text-4xl mb-16;
+  @apply relative w-fit mx-auto text-2xl md:text-4xl mb-16;
 }
 
 body h2::after {
@@ -63,11 +63,11 @@ body h2::after {
 }
 
 body h3 {
-  @apply text-2xl lg:text-3xl max-w-xs;
+  @apply text-2xl md:text-3xl max-w-xs;
 }
 
 body h4 {
-  @apply text-xl lg:text-2xl max-w-xs !leading-4;
+  @apply text-xl md:text-2xl max-w-xs !leading-4;
 }
 
 body p {
@@ -91,24 +91,18 @@ select {
 }
 
 .btn-primary {
-  @apply py-4 px-6 uppercase text-base bg-clrOrangeDark text-white hover:text-clrBrown hover:bg-clrOrange duration-300 rounded-md shadow-lg;
+  @apply inline-block py-4 px-6 uppercase text-base bg-clrOrangeDark text-white hover:text-clrBrown hover:bg-clrOrange duration-300 rounded-md shadow-lg;
   letter-spacing: 2px;
 }
 
 .btn-second {
-  @apply py-2 px-4 uppercase text-sm bg-clrOrangeDark text-white hover:text-clrBrown hover:bg-clrOrange duration-300  rounded-md shadow-lg;
+  @apply inline-block py-2 px-4 uppercase text-sm bg-clrOrangeDark text-white hover:text-clrBrown hover:bg-clrOrange duration-300  rounded-md shadow-lg;
   letter-spacing: 2px;
 }
+
 
 .btn-fire {
-  @apply py-1 px-2 capitalize text-sm bg-clrRed hover:opacity-80 text-white rounded-md shadow-md;
+  @apply inline-block py-1 px-2 capitalize text-sm bg-clrRed hover:opacity-80 text-white rounded-md shadow-md;
   letter-spacing: 2px;
 }
 
-.figure-anim img {
-  @apply relative overflow-hidden block;
-}
-.figure-anim img::after {
-  content: "";
-  @apply w-full h-full absolute top-0 left-0 bg-red-400 z-10;
-}
