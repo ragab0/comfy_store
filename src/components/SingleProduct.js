@@ -32,7 +32,7 @@ export default function SingleProduct() {
         <div className="grid gap-4 w-full h-full" style={{gridTemplateColumns: `repeat(${reviews.length+1}, 1fr)`}}>
           {
             [img, ...reviews].map((r, i) => (
-                <Image alt="review-img" src={r} key={i} className="w-full h-full rounded-md cursor-pointer hover:scale-90" onClick={() => setCurrentImg(r)} />
+                <Image key={i} alt="review-img" src={r} className="w-full h-full rounded-md cursor-pointer hover:scale-90" onClick={() => setCurrentImg(r)} />
             ))
           }
         </div>
@@ -43,7 +43,7 @@ export default function SingleProduct() {
           <div className="stars flex gap-2" style={{"--var":""}}>
             {
               [...Array(5)].map((a, i) => (
-                <Image alt="star" src={Star} fill={false} />
+                <Image key={i} alt="star" src={Star} fill={false} />
               ))
             }
           </div>
