@@ -239,20 +239,20 @@ should we copy\reSpread the objects to only change a prop:
 
 -It is: the suggested way to extend redux with custom functionality (if you want redux with extra features);
 -It is: provide a third-party extension point between dispatching an action,
-        and the moment it reaches the reducer; (action ---> theMiddleware <--- reducer);
+        and the moment it reaches the reducer; (action ---> theMiddleware <--- reducer); "Bridge";
 -It is: used for logging(redux-logger), crash reporting, perfroming async tasks etc;
         INSTEAD of using subscribers :D;
 
 -logger:
 =======:
  - const { createLogger } = require('redux-logger');
- - const logger = createLogger();
+ - const logger = createLogger(); "NOW we instanciate a middlware"
  - const { applyMiddleware } = redux;
  - const store = createStore(rootReducer, applyMiddleware(logger)): ;
 
 
 
--15 async actions:
+-15 async actions: (NEEDED three actions for each fetch\request + axios and thunk in fetching);
 =================:
 SYNC: As soon as an action was dispatched, the state was immediately updated;
 ASYNC APIs actions: calls to fetch data from an end point and use that data in your app;
@@ -268,23 +268,52 @@ Our app that we'll practice in:
   -- FETCH_USERS_FAILED: ;
 
  -Reducer: how it would work;
-  -- case 01: loading: true;
+  -- case 01: loading: true;;
   -- case 02: loading: false, users: data(from the API);
   -- case 03: loading: false, error: erro(from the API);
 
 
 16 - Redux Thunk Middleware:
 ===========================:
--It is used with network requests for making API calls with redux;
-
-axios package:
+axios package or fetch feature:
  - Requests to an API end point;
  
 redux-thunk package:
- - It is a package from redux-ecosystem;
- - It is define async actionCreators in our app (the standard way);
  - It is a middleware;
+ - It is a package from redux-ecosystem;
+ - It is "the standard way" to define async actionCreators;
+   In this case actionCreator will return instead of actionObj, a func ACCEPTS disptach as an argue that accepts..
 
+
+fetchUsers() { 
+  "actionCreators returns a func instead of actionObj, accepts dispatch argue which accepts the actionObj";
+  return function(disptach) {
+    axios.get()
+    .then() 
+    .cathc()
+    .finally()
+  }
+}
+fetchUsers() { 
+  "actionCreators returns a func instead of actionObj, accepts dispatch argue which accepts the actionObj";
+  return async function(disptach) {
+    ...
+    dispatch({type: payload: })
+    try { "container will run in the queue of async list"
+      ...
+      dispatch({type: payload: })
+    } catch {
+      ...
+      dispatch({type: payload: })
+    }
+    
+  }
+}
+
+handled by
+----------
+const store = legacy_createStore(rootReducer, applyMiddleware(createLogger(), ThunkMiddleware));
+"A MIDDLeWARE CATCHed any async action when we dispatch an action to our store";
 
 
 =============================================================:

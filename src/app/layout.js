@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className='min-h-screen'>
+          <p className=' bg-clrGrey text-black p-2 text-center text-base'>Support Ukraine 🇺🇦 - Comming soon <span className='text-red-400'> (Not completed yet!)</span></p>
           <Header />
           {children}
         </div>
