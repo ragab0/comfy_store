@@ -5,11 +5,11 @@
 
 
 
-/* Single product section */
-.single-product > div > * {
+/* Single room section */
+.single-room > div > * {
     margin-bottom: 1rem;
 }
-.single-product .stars span {
+.single-room .stars span {
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     padding: 10px;
     background-color: orange;
@@ -18,7 +18,7 @@
 
 
 
-/* Right filter +++ Single product colors */
+/* Right filter +++ Single room colors */
 .items-clrs li:first-child button {
     @apply block hover:opacity-80 !capitalize me-1;
 }

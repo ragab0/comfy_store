@@ -79,7 +79,7 @@ body li a {
 }
 
 select {
-  @apply p-1 pe-2 capitalize rounded-sm;
+  @apply p-1 pe-2 capitalize rounded-sm bg-slate-100;
 }
 
 .container {

@@ -1,44 +1,40 @@
-import Squares from "@/assets/imgs/squares.svg";
-import Paillers from "@/assets/imgs/paillers.svg";
-import Image from "next/image";
 
-
-const options = [
-  {
-    name: "price (lowest)",
-    value: "p0",
-  }, {
-    name: "price (highest)",
-    value: "p1",
-  }, {
-    name: "name (a-z)",
-    value: "az",
-  }, {
-    name: "name (z-a)",
-    value: "za",
-  },
-]
+import { sortOptions, viewOptions } from "@/assets/data/data";
+import { useDispatch, useSelector } from "react-redux";
+import { topFilterActions } from "@/redux/slices/top_fitler/TopFilter";
 
 
 export default function TopFilters() {
+
+  const dispatch = useDispatch();
+  const { view, sort } = useSelector(state => state.topFilterReducer);
+  const { currentList } = useSelector(state => state.roomsReducer.rooms);
+  function viewHandler(val) {
+    dispatch(topFilterActions.viewSetter(val))
+  }
+  function sortHandler(e) {
+    dispatch(topFilterActions.sortSetter(e.target.value))
+  }
+
   return (
     <section className='top-filter grid grid-cols-[auto_1fr_auto] gap-8 text-clrBrown items-center mb-8'>
       <div>
         {
-          [Squares, Paillers].map((b, i) => (
-            <button key={i} className='w-25 h-25 p-1 border-2 me-2 border-current rounded-md'>
-              <Image alt="img" src={b} className="w-full h-full !text-red-400 fill-current" />
+          viewOptions.map(({value, Ico}, i) => (
+            <button key={i} onClick={() => viewHandler(value)}
+              className={`w-25 h-25 p-1 border-2 me-2 border-current rounded-md ${value===view ? " border-clrOrangeDark":""}`} >
+              <Ico className={`w-full h-full transition-none ${value===view ? "text-clrOrangeDark" : ""}`} />
             </button>
           ))
         }
-        <span className="ms-8">N Products Found</span>
+        <span className="ms-4">{currentList?.length} Rooms Found</span>
       </div>
       <div className="py-[1px] bg-clrOrangeLight"></div>
       <div className=" capitalize">
         <span className="me-1">sort by</span>
-        <select>
+        <select onChange={sortHandler}>
           {
-            options.map(({name, value}, i) => (
+            sortOptions.map(({name, value}, i) => (
               <option key={i} value={value}>{name}</option>
             ))
           }

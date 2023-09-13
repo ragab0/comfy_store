@@ -35,11 +35,7 @@ function getProducts(req, res) {
   res.json(products);
 }
 
-// 03 handelr
-function getProducts(req, res) {
-  res.json(products);
-}
-
+// 03
 function getProductsFeatured(req, res) {
   res.json(products.slice(0, 3));
 }

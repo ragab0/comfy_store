@@ -3,22 +3,8 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/imgs/logo.svg";
-import user from "@/assets/imgs/user.svg"
 import car from "@/assets/imgs/car.svg"
-
-
-const links = [
-  {
-    name: "home",
-    path: "/"
-  },{
-    name: "about",
-    path: "/about"
-  },{
-    name: "products",
-    path: "/products"
-  },
-]
+import { links } from "@/assets/data/data";
 
 
 export default function Header() {
@@ -41,15 +27,10 @@ export default function Header() {
               }
             </ul>
           </nav>
-          <div className="text-2xl spacing text-clrHead1">
-            <Link href="/cart" className="inline-flex items-center gap-1 me-6">
-              cart <Image alt="car" src={car} width={25} />
-            </Link>
-            <Link href="/login" className="inline-flex items-center gap-1">
-              login <Image alt="user" src={user} width={25} />
-            </Link>
-          </div>
         </div>
+        <Link href="/cart" className="text-2xl spacing text-clrHead1 inline-flex items-center gap-1 me-6">
+          cart <Image alt="car" src={car} width={25} />
+        </Link>
       </div>
     </header>
   )

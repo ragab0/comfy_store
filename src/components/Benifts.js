@@ -1,24 +1,9 @@
-import mission from "@/assets/imgs/mission.svg";
-import vision from "@/assets/imgs/vision.svg";
-import history from "@/assets/imgs/history.svg";
+
+import { benifts } from "@/assets/data/data";
 import Image from "next/image";
 
 
-const cards = [
-  {
-    name: "mission",
-    img: mission,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum debitis consectetur reprehenderit non aliquam voluptates dolore aut vero consequuntur."
-  },{
-    name: "vision",
-    img: vision,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum debitis consectetur reprehenderit non aliquam voluptates dolore aut vero consequuntur."
-  },{
-    name: "history",
-    img: history,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum debitis consectetur reprehenderit non aliquam voluptates dolore aut vero consequuntur."
-  },
-]
+
 
 
 export default function Benifts() {
@@ -31,14 +16,14 @@ export default function Benifts() {
         </div>
         <div className="articles lg:-mb-40 grid md:grid-cols-2 lg:grid-cols-3 justify-between gap-8">
           {
-            cards.map(({name, desc, img}, i) => (
+            benifts.map(({name, desc, img}, i) => (
               <figure key={i} className="p-8 bg-clrOrange rounded-md hover:-translate-y-4 shadow-lg">
                 <div className=" bg-clrOrangeLight w-[60px] h-[60px] p-4 rounded-full mx-auto">
                   <Image alt={name} src={img} className="w-full h-full" />
                 </div>
                 <figcaption className="text-center">
-                  <h4 className="my-5 mx-auto">Mission</h4>
-                  <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum debitis consectetur reprehenderit non aliquam voluptates dolore aut vero consequuntur.</p>
+                  <h4 className="my-5 mx-auto">{name}</h4>
+                  <p >{desc}</p>
                 </figcaption>
               </figure>
             ))

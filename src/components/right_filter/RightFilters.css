@@ -3,11 +3,11 @@
 }
 
 .right-filter .items-catgs button {
-    @apply p-0 pb-[.25rem] mb-[.50rem] border-b-[.1rem] inline-block border-current hover:opacity-80 capitalize;
+    @apply p-0 pb-[.25rem] mb-2 border-b-2 inline-block border-transparent hover:opacity-80 capitalize;
 }
 
 .right-filter h5 {
-    margin-bottom: .5rem;
+    margin-block: .5rem;
 }
 
 .right-filter .items-clrs li:first-child button {

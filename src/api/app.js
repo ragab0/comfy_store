@@ -1,8 +1,8 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = process.env.API_PORT;
+const port = process.env.CURRENT_PORT;
 const {
   getApiBasiscProductsInfo,
   getProducts,

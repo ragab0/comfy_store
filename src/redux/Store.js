@@ -1,12 +1,18 @@
-import { bindActionCreators, legacy_createStore, combineReducers, applyMiddleware } from "redux";
+import { legacy_createStore, combineReducers, applyMiddleware } from "redux";
 import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 
-import productsReducer from "./slices/products/Products";
+import roomsReducer from "./slices/rooms/Rooms";
+import roomReducer from "./slices/room/Room";
+import rightFilterReducer from "./slices/right_filter/RightFilter";
+import topFilterReducer from "./slices/top_fitler/TopFilter";
 
 
 const rootReducer = combineReducers({
-  products: productsReducer,
+  roomsReducer,
+  roomReducer,
+  rightFilterReducer,
+  topFilterReducer,
 })
 
 

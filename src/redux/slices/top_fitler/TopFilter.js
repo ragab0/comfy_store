@@ -1,35 +1,59 @@
-const TOP_SET_VIEW="TOP_SET_VIEW";
-const TOP_SET_SORT_OPTIONS="TOP_SET_SORT_OPTIONS";
+const SET_VIEW="SET_VIEW";
+const SET_SORT="SET_SORT";
 
 const initialTopFilterState = {
-
+  view: "squares",
+  sort: "p0",
 }
 
 
-function topViewSetter() {
+function viewSetter(val) {
   return {
-    type: TOP_SET_VIEW,
+    type: SET_VIEW,
+    payload: val
   }
 }
 
-function topSortOptionsSetter() {
+function sortSetter(val) {
   return {
-    type: TOP_SET_SORT_OPTIONS,
+    type: SET_SORT,
+    payload: val
   }
 }
 
 
 export default function topFilterReducer(state=initialTopFilterState, action) {
   switch (action.type) {
-    case "value":
-      return "";
+    case SET_VIEW:
+      return {
+        ...state,
+        view: action.payload,
+      };
+
+    case SET_SORT:
+      const v = action.payload;
+      if (v === "p0") {
+
+      } else if (v === "p1") {
+
+      } else if (v === "az") {
+
+      } else if (v === "za") {
+
+      }
+
+      return {
+        ...state,
+        sort: v,
+      };
+
     default:
       return state;
   }
 }
 
 
-export const topFilterActionsCreators = {
-  topViewSetter,
-  topSortOptionsSetter,
+export const topFilterActions = {
+  viewSetter,
+  sortSetter,
 }

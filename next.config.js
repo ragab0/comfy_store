@@ -3,10 +3,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'www.course-api.com',
-        port: '',
-        pathname: '/images/store/**',
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '5000',
+        pathname: '/api/images/**',
       },
     ],
   },
