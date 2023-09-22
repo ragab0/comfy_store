@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { rightFilterActions } from "@/redux/slices/right_filter/RightFilter";
 import "./RightFilters.css";
@@ -7,6 +7,7 @@ import "./RightFilters.css";
 
 export default function RightFilters() {
   
+  const selectRef = useRef(null);
   const dispatch = useDispatch();
   const { 
     info: {colors=[], categorys=[], companys=[], maxPrice=0},
@@ -47,6 +48,7 @@ export default function RightFilters() {
 
   function clearHandler() {
     dispatch(rightFilterActions.clearSetter());
+    selectRef.current.selectedIndex = 0;
   }
 
   return (
@@ -70,7 +72,7 @@ export default function RightFilters() {
       <div className="side-right w-full">
         <div>
           <h5>company</h5>
-          <select onChange={companyHandler}>
+          <select onChange={companyHandler} ref={selectRef}>
             {
               ["all", ...companys].map((c, i) => (
                 <option key={i} value={c}>{c}</option>

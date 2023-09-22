@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
 export default function Rooms({roomsList=[], paillers=false}) {
   return (
     <section className={`grid md:grid-cols-2 lg:grid-cols-3 gap-4 ${paillers ? "!grid-cols-1" : ""}`}>

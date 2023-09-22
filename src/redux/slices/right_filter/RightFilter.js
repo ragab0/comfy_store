@@ -5,6 +5,7 @@ const current_url = process.env.NEXT_PUBLIC_CURRENT_API_LINK;
 const FETCH_BASIC_DATA_REQUESTED="FETCH_ROOM_REQUESTED";
 const FETCH_BASIC_DATA__SUCCEEDED="FETCH_BASIC_DATA__SUCCEEDED";
 const FETCH_BASIC_DATA__FAILED="FETCH_BASIC_DATA__FAILED";
+
 const SET_SEARCH="SET_SEARCH";
 const SET_CATEGORY="SET_CATEGORY";
 const SET_COMPANY="SET_COMPANY";
@@ -12,6 +13,7 @@ const SET_COLOR="SET_COLOR";
 const SET_PRICE="SET_RPICE";
 const SET_FREE_SHIPPING="SET_FREE_SHIPPING";
 const SET_CLEAR="SET_MAX_RPICE";
+
 
 const initialRightFilterState = {
   info: {}, // clrs, catgs, comps, maxprice,
@@ -111,6 +113,8 @@ export default function rightFilterReducer(state=initialRightFilterState, action
         error: action.payload
       };
 
+
+
     case SET_SEARCH:
       return {
         ...state,
@@ -147,6 +151,7 @@ export default function rightFilterReducer(state=initialRightFilterState, action
       }
 
     case SET_CLEAR:
+      
       const {maxPrice} = state.info
       return {
         ...state,

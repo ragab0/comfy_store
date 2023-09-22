@@ -1,6 +1,7 @@
 import axios from "axios";
 require('dotenv').config();
 const current_url = process.env.NEXT_PUBLIC_CURRENT_API_LINK;
+const SET_CURRENT_ROOMS="SET_CURRENT_ROOMS";
 
 const FETCH_ROOMS_REQUESTED="FETCH_ROOMS_REQUESTED";
 const FETCH_ROOMS_SUCCEEDED="FETCH_ROOMS_SUCCEEDED";
@@ -9,6 +10,7 @@ const FETCH_ROOMS_FAILED="FETCH_ROOMS_FAILED";
 const FETCH_ROOMS_FEATURED_REQUESTED="FETCH_ROOMS_FEATURED_REQUESTED";
 const FETCH_ROOMS_FEATURED_SUCCEEDED="FETCH_ROOMS_FEATURED_SUCCEEDED";
 const FETCH_ROOMS_FEATURED_FAILED="FETCH_ROOMS_FEATURED_FAILED";
+
 
 
 const initialRoomsState = {
@@ -39,6 +41,7 @@ function fetchRooms() {
 }
 
 
+
 function fetchRoomsFeatured() {
   return async function(dispatch) {
     dispatch({type: FETCH_ROOMS_FEATURED_REQUESTED});
@@ -50,6 +53,15 @@ function fetchRoomsFeatured() {
     }
   }
 }
+
+
+function currentListSetter(lista) {
+  return {
+    type: SET_CURRENT_ROOMS,
+    payload: lista,
+  }
+}
+
 
 
 export default function roomsReducer(state=initialRoomsState, action) {
@@ -70,23 +82,29 @@ export default function roomsReducer(state=initialRoomsState, action) {
         ...state,
         rooms: {
           list: action.payload,
-          currentList: action.payload,
           isLoading: false,
           error: null,
         }
       }
 
     case FETCH_ROOMS_FAILED:
-      // return {
-      //   ...state,
-      //   rooms: {
-      //     ...state.rooms,
-      //     isLoading: false,
-      //     error: action.payload,
-      //   }
-      // }
-return state
+      return {
+        ...state,
+        rooms: {
+          isLoading: false,
+          error: action.payload,
+        }
+      }
 
+    case SET_CURRENT_ROOMS:
+      return {
+        ...state,
+        rooms: {
+          ...state.rooms,
+          currentList: action.payload,
+        }
+      }
+    
     // 02
     case FETCH_ROOMS_FEATURED_REQUESTED:
       return {
@@ -119,13 +137,15 @@ return state
         }
       }
 
+
     default:
       return state;
-  }
+    }
 }
 
 
 export const roomsActions = {
   fetchRooms,
-  fetchRoomsFeatured
+  fetchRoomsFeatured,
+  currentListSetter,
 }

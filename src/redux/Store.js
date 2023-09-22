@@ -6,6 +6,7 @@ import roomsReducer from "./slices/rooms/Rooms";
 import roomReducer from "./slices/room/Room";
 import rightFilterReducer from "./slices/right_filter/RightFilter";
 import topFilterReducer from "./slices/top_fitler/TopFilter";
+import cartReducer from "./slices/Cart/Cart";
 
 
 const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   roomReducer,
   rightFilterReducer,
   topFilterReducer,
+  cartReducer,
 })
 
 

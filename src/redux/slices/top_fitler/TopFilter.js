@@ -33,7 +33,7 @@ export default function topFilterReducer(state=initialTopFilterState, action) {
     case SET_SORT:
       const v = action.payload;
       if (v === "p0") {
-
+        
       } else if (v === "p1") {
 
       } else if (v === "az") {

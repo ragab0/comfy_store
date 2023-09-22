@@ -1,6 +1,7 @@
 import Image from "next/image";
 import about from "@/assets/imgs/hero/hero-bcg2.jpeg";
 
+
 export default function AboutUs() {
   return (
     <section className="container grid md:grid-cols-2 gap-8 mb-20">

@@ -3,6 +3,7 @@ import { useParams } from "next/navigation";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { roomActions } from "@/redux/slices/room/Room";
+import { cartActions } from "@/redux/slices/Cart/Cart";
 import store from "@/redux/Store";
 import Image from "next/image";
 import Star from "@/assets/imgs/star.svg";
@@ -36,6 +37,18 @@ function RoomBody() {
 
   function decreNumberHandler() {
     dispatch(roomActions.sellRoom());
+  }
+
+  function addHandler() {
+    const theItem = {
+      id,
+      name,
+      color: currentColor,
+      count: currentNumber,
+      img: image,
+      price,
+    };
+    dispatch(cartActions.addToCartSetter(theItem));
   }
 
 
@@ -98,7 +111,7 @@ function RoomBody() {
             <p className="text-4xl inline-block mx-4">{currentNumber}</p>
             <button className="p-1 hover:scale-150" onClick={decreNumberHandler}>-</button>
           </div>
-          <button className="btn-second mt-6 !rounded-none">add to cart</button>
+          <button onClick={addHandler} className="btn-second mt-6 !rounded-none">add to cart</button>
         </section>
       </div>
     </main>

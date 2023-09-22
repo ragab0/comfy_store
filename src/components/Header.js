@@ -3,8 +3,8 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/imgs/logo.svg";
-import car from "@/assets/imgs/car.svg"
 import { links } from "@/assets/data/data";
+import Car from "./Car";
 
 
 export default function Header() {
@@ -21,16 +21,14 @@ export default function Header() {
               {
                 links.map(({name, path}, i) => (
                   <li key={i}>
-                    <Link href={path ?? name} className={path === currentPath ? "active-path text-clrBrown" : ""}>{name}</Link>
+                    <Link href={path ?? name} className={path === currentPath ? "active-path text-clrHead1 font-bold" : ""}>{name}</Link>
                   </li>
                 ))
               }
             </ul>
           </nav>
         </div>
-        <Link href="/cart" className="text-2xl spacing text-clrHead1 inline-flex items-center gap-1 me-6">
-          cart <Image alt="car" src={car} width={25} />
-        </Link>
+        <Car />
       </div>
     </header>
   )

@@ -16,6 +16,11 @@ const initialRoomState = {
   isLoading: false,
   erorr: "",
 
+  // Cart
+  cart: {
+    cartList: [],
+  },
+
   // Current state will hanlded in cart
   currentColor: "",
   currentImg: "",
@@ -49,6 +54,7 @@ function sellRoom() {
   }
 }
 
+
 function coloringRoom(payload) {
   return {
     type: ROOM_COLOR_SETTER,
@@ -62,6 +68,7 @@ function imaginedRoom(index) {
     payload: index,
   }
 }
+
 
 
 export default function roomReducer(state=initialRoomState, action) {
@@ -78,7 +85,8 @@ export default function roomReducer(state=initialRoomState, action) {
         ...state,
         item: action.payload,
         currentImg: action.payload.image,
-        currentColor: action.payload.colors[0] || "#000",
+        currentColor: action.payload.colors[0],
+        currentNumber: 1,
         isLoading: false,
         error: null
       };
@@ -101,6 +109,7 @@ export default function roomReducer(state=initialRoomState, action) {
         ...state,
         currentNumber: state.currentNumber -1,
       };
+
     case ROOM_COLOR_SETTER:
       return {
         ...state,

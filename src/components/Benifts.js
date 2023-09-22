@@ -1,9 +1,5 @@
-
 import { benifts } from "@/assets/data/data";
 import Image from "next/image";
-
-
-
 
 
 export default function Benifts() {
