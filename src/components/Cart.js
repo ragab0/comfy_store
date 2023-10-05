@@ -2,7 +2,6 @@
 import Down from "@/assets/imgs/Down";
 import Up from "@/assets/imgs/Up";
 import store from "@/redux/Store";
-import Image from "next/image";
 import Link from "next/link";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { cartActions } from "@/redux/slices/Cart/Cart";
@@ -35,7 +34,7 @@ function CartBody() {
         cartList.map(({id, name, img, count, price, color}, i) => (
           <figure key={i} className="flex gap-8 mb-8">
             <Link href={`/rooms/${id}`} className="w-[100px] h-[100px]">
-              <Image alt={name} src={img} width={100} height={100} className=" w-full h-full rounded-sm" />
+              <img alt={name} src={img} width={100} height={100} className=" w-full h-full rounded-sm" />
             </Link>
             <figcaption className="flex-1 grid grid-cols-[1fr_auto] gap-8">
               <div>

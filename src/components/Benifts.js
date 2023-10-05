@@ -1,5 +1,4 @@
 import { benifts } from "@/assets/data/data";
-import Image from "next/image";
 
 
 export default function Benifts() {
@@ -18,7 +17,7 @@ export default function Benifts() {
           benifts.map(({name, desc, img}, i) => (
             <figure key={i} className="p-8 bg-clrOrange rounded-md hover:-translate-y-4 shadow-lg">
               <div className=" bg-clrOrangeLight w-[60px] h-[60px] p-4 rounded-full mx-auto">
-                <Image alt={name} src={img} className="w-full h-full" />
+                <img alt={name} src={img} className="w-full h-full" />
               </div>
               <figcaption className="text-center">
                 <h4 className="my-5 mx-auto">{name}</h4>
