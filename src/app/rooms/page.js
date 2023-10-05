@@ -21,11 +21,9 @@ function RoomsBody() {
     isFreeShipping, 
   } = useSelector((state) => state.rightFilterReducer)
 
-
   useEffect(function() {
     dispatch(roomsActions.fetchRooms());
   }, [])
-
 
   useEffect(function() {
     let newCurrentList = list.filter((item, i) => {
@@ -67,11 +65,16 @@ function RoomsBody() {
       <RightFilters />
       <div>
         <TopFilters listLength={currentList ? currentList.length : 0} />
-        <Rooms roomsList={currentList} paillers={view === "paillers"} />
+        {
+          currentList?.length
+          ? <Rooms roomsList={currentList} paillers={view === "paillers"} />
+          : <p className=" text-black text-xl my-16 text-center underline">There is no Rooms to show !!</p>
+        }
       </div>
     </div>
   )
 }
+
 
 export default function page() {
   return (

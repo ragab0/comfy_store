@@ -1,6 +1,6 @@
 # comfy_store
-A web store written in Nextjs and Express.js, to create a CRUD server with a simple front-end ui page has also great
-user-friendly features like filtering, ;
+A web store the place where you can find the best room ever. It is written in Nextjs and Express.js in order to practice on Express and creating a simple CRUD API. It is also come with 
+user-friendly features like advanced filtering with many different options, seamless card functionallity and more;
 
 ![comphy_store](./src/assets/imgs/web/comfy-sloth-store-01.png)
 
@@ -15,16 +15,14 @@ user-friendly features like filtering, ;
 - Figma
 - Express.js
 - Node.js
+- Render for deployment
 
 ## Preview
 
 [Comfy Rooms App](https://comphy-store.vercel.app/) or https://comphy-store.vercel.app/
 
-## Note
-- The server is created with different structures depent on the request type such as when you sending
-request to fetch products, you got on a list. And when you sending a request in order to get on a specific product,
-the response retrned on one step O(1) the structure is an object of Map structure (you can't do that on nextjs server
-as the structures w'll rerender the structure in every request that server got on);
 
-- It is 50% back-end and 50% front-end, means that i *handledSingleProduct* on the **on server** on a specific route,
-and filters done on the **client side** using redux, as i'm also practice on it :)
+## Note
+- The Express API architecture is designed to be flexible and adaptable to different request types. For example, when a request is made to fetch a signifact product of our products list, the server returns it in a single step (O(1)). This is achieved by using a Map structure to store the products data. Similarly, when a request is made to get a specific product. This approach is not possible in Next.js servers, as the structures would be re-rendered on every request, which would significantly impact performance.
+
+- The Express API uploaded on render better than vercel server;

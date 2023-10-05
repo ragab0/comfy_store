@@ -6,7 +6,6 @@ import "./RightFilters.css";
 
 
 export default function RightFilters() {
-  
   const selectRef = useRef(null);
   const dispatch = useDispatch();
   const { 
@@ -50,6 +49,7 @@ export default function RightFilters() {
     dispatch(rightFilterActions.clearSetter());
     selectRef.current.selectedIndex = 0;
   }
+
 
   return (
     <section className="right-filter max-md:grid max-md:grid-cols-2 gap-8 md:max-w-[200px] mb-16">

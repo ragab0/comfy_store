@@ -72,6 +72,7 @@ function CartBody() {
   )
 }
 
+
 export default function Cart() {
   return (
     <Provider store={store}>

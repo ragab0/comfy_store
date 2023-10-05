@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 
 
 export default function Paths() {
-  
-  const [currentPath, setPath] = useState('')
+  const [currentPath, setPath] = useState('');
+
   useEffect(function() {
     setPath("home" + window.location.pathname);
   }, [])
 
+  
   return (
     <section className="paths py-20 mb-16 bg-clrOrangeLight ">
       <h3 className="container text-[#815444]">

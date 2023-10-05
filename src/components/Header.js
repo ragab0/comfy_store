@@ -1,16 +1,17 @@
 'use client';
 import { usePathname } from "next/navigation";
+import { links } from "@/assets/data/data";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/imgs/logo.svg";
-import { links } from "@/assets/data/data";
 import Car from "./Car";
 
 
 export default function Header() {
   const currentPath = usePathname();
+  
   return (
-    <header className="">
+    <header>
       <div className="container py-4 flex justify-between items-center capitalize gap-8">
         <Link href="/">
           <Image alt="logo" src={logo} width={150} />
@@ -21,7 +22,9 @@ export default function Header() {
               {
                 links.map(({name, path}, i) => (
                   <li key={i}>
-                    <Link href={path ?? name} className={path === currentPath ? "active-path text-clrHead1 font-bold" : ""}>{name}</Link>
+                    <Link href={path ?? name} 
+                      className={path === currentPath ? "active-path text-clrHead1 font-bold" : ""}
+                    >{name}</Link>
                   </li>
                 ))
               }

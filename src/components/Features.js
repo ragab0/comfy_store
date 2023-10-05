@@ -11,10 +11,12 @@ import "./Comps.css";
 function FeaturesBody() {
   const featuredRooms = useSelector((state) => state.roomsReducer.roomsFeatured.list);
   const dispatch = useDispatch();
+
   useEffect(function() {
     dispatch(roomsActions.fetchRoomsFeatured());
   }, [])
 
+  
   return (
     <section className="sec-features py-20 bg-clrGrey">
       <div className="container">

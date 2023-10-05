@@ -1,19 +1,20 @@
-
 import { sortOptions, viewOptions } from "@/assets/data/data";
 import { useDispatch, useSelector } from "react-redux";
 import { topFilterActions } from "@/redux/slices/top_fitler/TopFilter";
 
 
 export default function TopFilters({listLength}) {
-
   const dispatch = useDispatch();
-  const { view, sort } = useSelector(state => state.topFilterReducer);
+  const { view } = useSelector(state => state.topFilterReducer);
+
   function viewHandler(val) {
     dispatch(topFilterActions.viewSetter(val))
   }
+
   function sortHandler(e) {
     dispatch(topFilterActions.sortSetter(e.target.value))
   }
+
 
   return (
     <section className='top-filter grid grid-cols-[auto_1fr_auto] gap-8 text-clrBrown items-center mb-8'>
@@ -21,7 +22,9 @@ export default function TopFilters({listLength}) {
         {
           viewOptions.map(({value, Ico}, i) => (
             <button key={i} onClick={() => viewHandler(value)}
-              className={`w-25 h-25 p-1 border-2 me-2 rounded-md ${value===view ? " border-clrOrangeDark":"border-current"}`} >
+              className={`w-25 h-25 p-1 border-2 me-2 rounded-md 
+              ${value===view ? " border-clrOrangeDark":"border-current"}`}
+            >
               <Ico className={`w-full h-full transition-none ${value===view ? "text-clrOrangeDark" : ""}`} />
             </button>
           ))
