@@ -7,6 +7,10 @@ const nextConfig = {
         hostname: 'localhost',
         port: '5000',
         pathname: '/api/public/images/**',
+      },      {
+        protocol: 'https',
+        hostname: 'github.com',
+        pathname: '/ragab0/comfy_store/blob/main/src/api/public/images/**',
       },
     ],
   },
