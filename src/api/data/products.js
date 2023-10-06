@@ -2,10 +2,10 @@ require("dotenv").config();
 const { CURRENT_HOST } = process.env;
 
 const images = [
-  CURRENT_HOST + "/api/public/images/previews/extra-product-1.jpeg",
-  CURRENT_HOST + "/api/public/images/previews/extra-product-2.jpeg",
-  CURRENT_HOST + "/api/public/images/previews/extra-product-3.jpeg",
-  CURRENT_HOST + "/api/public/images/previews/extra-product-4.jpeg",
+  CURRENT_HOST + "/previews/extra-product-1.jpeg",
+  CURRENT_HOST + "/previews/extra-product-2.jpeg",
+  CURRENT_HOST + "/previews/extra-product-3.jpeg",
+  CURRENT_HOST + "/previews/extra-product-4.jpeg",
 ];
 
 
@@ -14,7 +14,7 @@ module.exports = [
     id: "1",
     name: "accent chair",
     price: 25999,
-    image: CURRENT_HOST + "/api/public/images/product-1.jpeg",
+    image: CURRENT_HOST + "/product-1.jpeg",
     colors: ["#ff0000", "#00ff00", "#0000ff"],
     company: "marcos",
     description:
@@ -27,7 +27,7 @@ module.exports = [
     id: "2",
     name: "albany sectional",
     price: 109999,
-    image: CURRENT_HOST + "/api/public/images/product-2.jpeg",
+    image: CURRENT_HOST + "/product-2.jpeg",
     colors: ["#000", "#ffb900"],
     company: "liddy",
     description:
@@ -39,7 +39,7 @@ module.exports = [
     id: "3",
     name: "albany table",
     price: 309999,
-    image: CURRENT_HOST + "/api/public/images/product-3.jpeg",
+    image: CURRENT_HOST + "/product-3.jpeg",
     colors: ["#ffb900", "#0000ff"],
     company: "liddy",
     description:
@@ -51,7 +51,7 @@ module.exports = [
     id: "4",
     name: "armchair",
     price: 12599,
-    image: CURRENT_HOST + "/api/public/images/product-4.jpeg",
+    image: CURRENT_HOST + "/product-4.jpeg",
     colors: ["#000", "#00ff00", "#0000ff"],
     company: "marcos",
     description:
@@ -64,7 +64,7 @@ module.exports = [
     id: "5",
     name: "dining table",
     price: 42999,
-    image: CURRENT_HOST + "/api/public/images/product-5.jpeg",
+    image: CURRENT_HOST + "/product-5.jpeg",
     colors: ["#00ff00", "#0000ff", "#ff0000"],
     company: "ikea",
     description:
@@ -77,7 +77,7 @@ module.exports = [
     id: "6",
     name: "emperor bed",
     price: 23999,
-    image: CURRENT_HOST + "/api/public/images/product-6.jpeg",
+    image: CURRENT_HOST + "/product-6.jpeg",
     colors: ["#0000ff", "#000"],
     company: "ikea",
     description:
@@ -90,7 +90,7 @@ module.exports = [
     id: "7",
     name: "entertainment center",
     price: 59999,
-    image: CURRENT_HOST + "/api/public/images/product-7.jpeg",
+    image: CURRENT_HOST + "/product-7.jpeg",
     featured: true,
     colors: ["#000", "#ff0000"],
     company: "caressa",
@@ -104,7 +104,7 @@ module.exports = [
     id: "8",
     name: "high-back bench",
     price: 39999,
-    image: CURRENT_HOST + "/api/public/images/product-8.jpeg",
+    image: CURRENT_HOST + "/product-8.jpeg",
     featured: true,
     colors: ["#000", "#00ff00"],
     company: "ikea",
@@ -118,7 +118,7 @@ module.exports = [
     id: "9",
     name: "leather chair",
     price: 20099,
-    image: CURRENT_HOST + "/api/public/images/product-9.jpeg",
+    image: CURRENT_HOST + "/product-9.jpeg",
     colors: ["#ff0000", "#ffb900", "#00ff00"],
     company: "caressa",
     description:
@@ -130,7 +130,7 @@ module.exports = [
     id: "10",
     name: "leather sofa",
     price: 99999,
-    image: CURRENT_HOST + "/api/public/images/product-10.jpeg",
+    image: CURRENT_HOST + "/product-10.jpeg",
     colors: ["#00ff00", "#0000ff"],
     company: "caressa",
     description:
@@ -142,7 +142,7 @@ module.exports = [
     id: "11",
     name: "modern bookshelf",
     price: 31999,
-    image: CURRENT_HOST + "/api/public/images/product-11.jpeg",
+    image: CURRENT_HOST + "/product-11.jpeg",
     featured: true,
     colors: ["#ffb900", "#ff0000", "#00ff00"],
     company: "caressa",
@@ -155,7 +155,7 @@ module.exports = [
     id: "12",
     name: "modern poster",
     price: 3099,
-    image: CURRENT_HOST + "/api/public/images/product-12.jpeg",
+    image: CURRENT_HOST + "/product-12.jpeg",
     colors: ["#000"],
     company: "liddy",
     description:
@@ -168,7 +168,7 @@ module.exports = [
     id: "13",
     name: "shelf",
     price: 30999,
-    image: CURRENT_HOST + "/api/public/images/product-13.jpeg",
+    image: CURRENT_HOST + "/product-13.jpeg",
     colors: ["#00ff00"],
     company: "ikea",
     description:
@@ -180,7 +180,7 @@ module.exports = [
     id: "14",
     name: "simple chair",
     price: 109999,
-    image: CURRENT_HOST + "/api/public/images/product-14.jpeg",
+    image: CURRENT_HOST + "/product-14.jpeg",
     colors: ["#0000ff"],
     company: "liddy",
     description:
@@ -193,7 +193,7 @@ module.exports = [
     id: "15",
     name: "sofa set",
     price: 129999,
-    image: CURRENT_HOST + "/api/public/images/product-15.jpeg",
+    image: CURRENT_HOST + "/product-15.jpeg",
     colors: ["#00ff00", "#ffb900"],
     company: "marcos",
     description:
@@ -206,7 +206,7 @@ module.exports = [
     id: "16",
     name: "suede armchair",
     price: 15999,
-    image: CURRENT_HOST + "/api/public/images/product-16.jpeg",
+    image: CURRENT_HOST + "/product-16.jpeg",
     colors: ["#ffb900"],
     company: "caressa",
     description:
@@ -218,7 +218,7 @@ module.exports = [
     id: "17",
     name: "utopia sofa",
     price: 79999,
-    image: CURRENT_HOST + "/api/public/images/product-17.jpeg",
+    image: CURRENT_HOST + "/product-17.jpeg",
     featured: true,
     colors: ["#ff0000", "#00ff00"],
     company: "liddy",
@@ -231,7 +231,7 @@ module.exports = [
     id: "18",
     name: "vase table",
     price: 120999,
-    image: CURRENT_HOST + "/api/public/images/product-18.jpeg",
+    image: CURRENT_HOST + "/product-18.jpeg",
     featured: true,
     colors: ["#ff0000"],
     company: "marcos",
@@ -244,7 +244,7 @@ module.exports = [
     id: "19",
     name: "wooden bed",
     price: 250099,
-    image: CURRENT_HOST + "/api/public/images/product-19.jpeg",
+    image: CURRENT_HOST + "/product-19.jpeg",
     colors: ["#000", "#ffb900"],
     company: "ikea",
     description:
@@ -256,7 +256,7 @@ module.exports = [
     id: "20",
     name: "wooden desk",
     price: 150999,
-    image: CURRENT_HOST + "/api/public/images/product-20.jpeg",
+    image: CURRENT_HOST + "/product-20.jpeg",
     colors: ["#000"],
     company: "ikea",
     description:
@@ -269,7 +269,7 @@ module.exports = [
     id: "21",
     name: "wooden desk",
     price: 40099,
-    image: CURRENT_HOST + "/api/public/images/product-21.jpeg",
+    image: CURRENT_HOST + "/product-21.jpeg",
     colors: ["#0000ff", "#00ff00"],
     company: "ikea",
     description:
@@ -281,7 +281,7 @@ module.exports = [
     id: "22",
     name: "wooden table",
     price: 234999,
-    image: CURRENT_HOST + "/api/public/images/product-22.jpeg",
+    image: CURRENT_HOST + "/product-22.jpeg",
     featured: true,
     colors: ["#ffb900", "#ff0000"],
     company: "caressa",

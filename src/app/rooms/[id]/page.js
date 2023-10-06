@@ -5,8 +5,8 @@ import { useEffect } from "react";
 import { roomActions } from "@/redux/slices/room/Room";
 import { cartActions } from "@/redux/slices/Cart/Cart";
 import store from "@/redux/Store";
-import Image from "next/image";
 import Star from "@/assets/imgs/star.svg";
+import Image from "next/image";
 
 
 function RoomBody() {

@@ -13,7 +13,7 @@ const {
 
 
 // Middlwares: handling static files, Parsing incoming json data, accepten any request from any place;
-app.use('/api/public/images', express.static('public/images'))
+app.use('/', express.static('public/images'))
 app.use(express.json());
 app.use(cors());
 

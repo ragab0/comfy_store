@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 
 export default function Rooms({roomsList=[], paillers=false}) {
@@ -8,7 +9,7 @@ export default function Rooms({roomsList=[], paillers=false}) {
         roomsList.map(({name, price, image, description, id}, i) => (
           <figure key={i} className={`mb-8 ${paillers ? "grid grid-cols-[300px_1fr] gap-8" : ""}`}>
             <Link href={`/rooms/${id}`}>
-              <img alt="room" src={image} width={350} height={250} 
+              <Image alt="room" src={image} width={350} height={250} 
                 className="w-full h-[175px] object-cover rounded-md hover:scale-90 "
               />
             </Link>
