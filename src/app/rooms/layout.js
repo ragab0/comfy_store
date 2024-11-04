@@ -1,13 +1,10 @@
 import Paths from "@/components/Paths";
 
-
-export default function page({children}) {
+export default function page({ children }) {
   return (
     <div>
       <Paths />
-      {
-        children
-      }
+      {children}
     </div>
-  )
+  );
 }
